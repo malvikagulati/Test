@@ -3,9 +3,6 @@ package com.tw.javapractice.calculator;
 import java.util.Scanner;
 
 public class Calculator {
-    double num1;
-     double num2;
-
     private void sum(double num1, double num2) {
 
         System.out.println("Sum of two numbers is " + (num1 + num2));
@@ -15,7 +12,7 @@ public class Calculator {
         System.out.println("Difference of two numbers is " + (num1 - num2));
     }
 
-    private void mul( double num1, double num2) {
+    private void mul(double num1, double num2) {
         System.out.println("Multiplication of two numbers is " + (num1 * num2));
     }
 
@@ -25,43 +22,45 @@ public class Calculator {
 
     public void doOperations() {
         Scanner sc = new Scanner(System.in);
-        Boolean IsContinue = true;
-        while (IsContinue) {
+        boolean isContinue = true;
+        while (isContinue) {
             System.out.println("Enter 1 to find the sum of two numbers");
             System.out.println("Enter 2 to find the difference of two numbers");
             System.out.println("Enter 3 to find the multiplication of two numbers");
             System.out.println("Enter 4 to find the division of two numbers");
-            System.out.println("Enter 5 to exit");
+            System.out.println("Enter 5 or more than 5 to exit");
             System.out.println();
             System.out.println("Enter your Option");
             int userInput = sc.nextInt();
-            if (userInput<=4) {
-                System.out.println("Now enter any two numbers");
-            }
-            else
-            {
-                System.exit(0);
-            }
-            double num1 = sc.nextDouble();
-            double num2 = sc.nextDouble();
+            double num1 = 0;
+            double num2 = 0;
             switch (userInput) {
                 case 1:
+                    System.out.println("Now enter any two numbers");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
                     sum(num1, num2);
                     break;
                 case 2:
+                    System.out.println("Now enter any two numbers");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
                     diff(num1, num2);
                     break;
                 case 3:
+                    System.out.println("Now enter any two numbers");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
                     mul(num1, num2);
                     break;
                 case 4:
+                    System.out.println("Now enter any two numbers");
+                    num1 = sc.nextDouble();
+                    num2 = sc.nextDouble();
                     div(num1, num2);
                     break;
-                case 5:
-                    IsContinue = false;
-                    break;
                 default:
-                    System.out.println("Please enter the valid option");
+                    isContinue = false;
             }
             System.out.println("");
         }

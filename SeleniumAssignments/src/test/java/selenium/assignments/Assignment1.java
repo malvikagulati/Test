@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
-public class Exercise1 {
+public class Assignment1 {
 
     //instantiating the webdriver
      WebDriver chromeDriver = null;
@@ -38,8 +38,8 @@ public class Exercise1 {
     public void loginAddToCartAssertCartValue() {
 
         //sign-in as existing user
-        chromeDriver.findElement(By.id("spree_user_email")).sendKeys("testuser011@tester.com");//fill in the email ID
-        chromeDriver.findElement(By.name("spree_user[password]")).sendKeys("tester@123");//fill in the password
+        chromeDriver.findElement(By.id("spree_user_email")).sendKeys("malvika@gmail.com");//fill in the email ID
+        chromeDriver.findElement(By.name("spree_user[password]")).sendKeys("123456789");//fill in the password
         chromeDriver.findElement(By.xpath("//input[@type='checkbox']")).click();//check the 'Remember me' checkbox
         chromeDriver.findElement(By.cssSelector("input[type='submit'][value='Login']")).submit();//click on the login button
 
@@ -75,7 +75,7 @@ public class Exercise1 {
     @AfterMethod
     public void logoutAndQuitBrowser() {
 
-        System.out.println("Will logout now!");
+        System.out.println("logout");
         //logging out from the session
         WebElement logoutButton = chromeDriver.findElement(By.cssSelector("[href='/logout']"));
         logoutButton.click();

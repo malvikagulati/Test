@@ -14,7 +14,7 @@
 						"exec": [
 							"var resp=pm.response.json();\r",
 							"console.log(resp.userId);\r",
-							"pm.globals.set(\"id\", resp.userId);\r",
+							"pm.globals.set(\"userId\", resp.userId);\r",
 							"\r",
 							"\r",
 							"pm.test(\"Status code is 200\", function () {\r",
@@ -51,7 +51,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "AccountDetails",
 			"request": {
 				"method": "GET",
 				"header": []

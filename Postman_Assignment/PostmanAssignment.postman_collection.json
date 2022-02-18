@@ -14,7 +14,7 @@
 						"exec": [
 							"var resp=pm.response.json();\r",
 							"console.log(resp.userId);\r",
-							"pm.globals.set(\"userId\", resp.userId);\r",
+							"pm.globals.set(\"UserId\", resp.userId);\r",
 							"\r",
 							"\r",
 							"pm.test(\"Status code is 200\", function () {\r",
@@ -52,9 +52,43 @@
 		},
 		{
 			"name": "AccountDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "w3e6JTfHluo0VLjarPSYnY8aeKWepsez0HPRv5yLdQXxnBZty6O8U2sSF8wqLaS7",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{AssignmentServer}}/accounts?filter[where][userId]={{userId}}",
+					"host": [
+						"{{AssignmentServer}}"
+					],
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "filter[where][userId]",
+							"value": "{{userId}}"
+						}
+					]
+				}
 			},
 			"response": []
 		},

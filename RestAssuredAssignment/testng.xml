@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.uibank.AccountsDetails"/>
+      <class name="com.uibank.Login"/>
+      <class name="com.uibank.CreateNewAccount"/>
+      <class name="com.uibank.ViewProfile"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
